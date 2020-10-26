@@ -4,8 +4,16 @@
 
 The intent of this project is to:
 
-1. Validate the options in regards to how we can manage SQLite migration and CRUD from a Django application perspective.
-2. Validate the integration of Instaloader with Celery
+1. Validate **SQLite migration** and **CRUD operations** in a Django application.
+2. Integrate **INSTALOADER** with **CELERY**
+
+# Screenshots
+
+**Main Page**
+![image](https://user-images.githubusercontent.com/16644017/97154688-8e5f5b00-17b7-11eb-9480-2f30ebeaf275.png)
+
+**Forms Page**
+![image](https://user-images.githubusercontent.com/16644017/97154780-aafb9300-17b7-11eb-8bbb-1505e75d843a.png)
 
 # Dependencies
 
@@ -17,7 +25,7 @@ https://docs.celeryproject.org/en/stable/getting-started/first-steps-with-celery
 https://www.rabbitmq.com/download.html
 ```
 
-# How to start:
+# How to start
 
 ```python
 # Install Module Dependencies
@@ -36,7 +44,9 @@ python manage.py runserver
 celery -A digimarket_test worker --pool=eventlet -l INFO
 ```
 
-# References:
+# Terminal w/ CELERY
+
+# File Streucture
 
 ```js
 /digimarket_test
@@ -61,3 +71,9 @@ celery -A digimarket_test worker --pool=eventlet -l INFO
     urls.py // Django endpoint/route setup
     views.py // View Renderer
 ```
+
+# References
+
+1. (Django + Celery) https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html
+2. (Instaloader) https://instaloader.github.io/codesnippets.html
+3.
