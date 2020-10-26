@@ -5,11 +5,6 @@ from . import views
 urlpatterns = [
     # ex: /core/
     path('', views.index, name='index'),
-    # ex: /core/5/
-    # the 'name' value as called by the {% url %} template tag
-    path('<int:question_id>/', views.detail, name='detail'),
-    # ex: /core/5/results/
-    path('<int:question_id>/results/', views.results, name='results'),
-    # ex: /core/5/vote/
-    path('<int:question_id>/vote/', views.vote, name='vote'),
+    # ex: /instagram
+    path('instaloader/', views.instaloader, name='instaloader'),
 ]

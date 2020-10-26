@@ -1,10 +1,28 @@
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <!-- <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> -->
-        <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Instaloader Test</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1>Django Celery Example</h1>
+        <br>
+        <hr>
+        <div class="container">
+            <h2>Fomulário:</h2>
+            {% bootstrap_messages %}
+            <form action="{% url 'prepare_hashtag_data' %}" method="post" class="form" autocomplete="off">
+                {% csrf_token %}
+                {% bootstrap_form form%}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary" id="btn_test">Rodar Hashtags</button>
+                {% endbuttons %}
+            </form>
+            <div class="container" id="output">
+
+            </div>
+        </div>
+    </body>
+</html>
