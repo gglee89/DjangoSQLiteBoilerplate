@@ -44,8 +44,6 @@ python manage.py runserver
 celery -A digimarket_test worker --pool=eventlet -l INFO
 ```
 
-# Terminal w/ CELERY
-
 # File Streucture
 
 ```js
@@ -76,4 +74,3 @@ celery -A digimarket_test worker --pool=eventlet -l INFO
 
 1. (Django + Celery) https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html
 2. (Instaloader) https://instaloader.github.io/codesnippets.html
-3.
