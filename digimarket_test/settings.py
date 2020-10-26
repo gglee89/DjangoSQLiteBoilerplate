@@ -74,12 +74,6 @@ WSGI_APPLICATION = 'digimarket_test.wsgi.application'
 
 
 # Celery Configuration Options
-CELERY_TIMEZONE = "Asia/Seoul"
-CELERY_TASK_TRACK_STARTED = True
-CELERY_TASK_TIME_LIMIT = 30 * 60
-CELERY_RESULT_BACKEND = 'django-db'
-CELERY_CACHE_BACKEND = 'django-cache'
-CELERY_CACHE_BACKEND = 'default'
 CELERY_BROKER_URL = 'amqp://localhost'
 
 # django setting.

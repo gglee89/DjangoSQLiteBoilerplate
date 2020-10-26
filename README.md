@@ -1,29 +1,63 @@
-## About this project
+# About this project
 
-**Django + SQLite Starter Project.**
+**Django + CELERY + SQLite Boilerplate.**
 
-The intent of this project is to validate the options in regards to how we can manage SQLite migration and CRUD from a Django application perspective.
+The intent of this project is to:
 
-## References:
+1. Validate the options in regards to how we can manage SQLite migration and CRUD from a Django application perspective.
+2. Validate the integration of Instaloader with Celery
+
+# Dependencies
 
 ```python
-digimarket_test/
+# Setup Celery
+https://docs.celeryproject.org/en/stable/getting-started/first-steps-with-celery.html
+
+# Setup RabbitMQ or Redis as a SERVICE
+https://www.rabbitmq.com/download.html
+```
+
+# How to start:
+
+```python
+# Install Module Dependencies
+pip install requirements.txt
+```
+
+```python
+# In one terminal tab
+# Start the django application
+python manage.py runserver
+```
+
+```python
+# In another terminal tab
+# Start celery
+celery -A digimarket_test worker --pool=eventlet -l INFO
+```
+
+# References:
+
+```js
+/digimarket_test
   manage.py
-  digimarket_test/
+  /digimarket_test
     __init__.py
     settings.py
     urls.py
     asgi.py
     wsgi.py
+  /code
+    /migrations
+    /static // Static files
+    /templates // Django template filees
+    __init__.py
+    admin.py
+    apps.py
+    forms.py
+    modles.py
+    tasks.py // Celery Task
+    tests.py
+    urls.py // Django endpoint/route setup
+    views.py // View Renderer
 ```
-
-These files are:
-
-- The outer mysite/ root directory is a container for your project. Its name doesn’t matter to Django; you can rename it to anything you like.
-- **manage.py:** A command-line utility that lets you interact with this Django project in various ways. You can read all the details about manage.py in django-admin and manage.py.
-- The inner mysite/ directory is the actual Python package for your project. Its name is the Python package name you’ll need to use to import anything inside it (e.g. mysite.urls).
-- **mysite/\_\_init\_\_.py:** An empty file that tells Python that this directory should be considered a Python package. If you’re a Python beginner, read more about packages in the official Python docs.
-- **mysite/settings.py:** Settings/configuration for this Django project. Django settings will tell you all about how settings work.
-- **mysite/urls.py:** The URL declarations for this Django project; a “table of contents” of your Django-powered site. You can read more about URLs in URL dispatcher.
-- **mysite/asgi.py:** An entry-point for ASGI-compatible web servers to serve your project. See How to deploy with ASGI for more details.
-- **mysite/wsgi.py:** An entry-point for WSGI-compatible web servers to serve your project. See How to deploy with WSGI for more details.
